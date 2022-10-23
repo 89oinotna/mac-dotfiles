@@ -1,6 +1,6 @@
 *
 !.hammerspoon/init.lua
-!.hammerspoon/
+!.hammerspoon/.
 !.p10k.zsh
 !.skhdrc
 !.yabairc

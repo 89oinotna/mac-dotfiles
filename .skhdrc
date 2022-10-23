@@ -10,10 +10,10 @@ hyper - j : yabai -m window --swap south
 hyper - k : yabai -m window --swap north
 hyper - l : yabai -m window --swap east
 
-hyper - h : yabai -m window --warp west
-hyper - j : yabai -m window --warp south
-hyper - k : yabai -m window --warp north
-hyper - l : yabai -m window --warp east
+hyper - left : yabai -m window --warp west
+hyper - down : yabai -m window --warp south
+hyper - up : yabai -m window --warp north
+hyper - right : yabai -m window --warp east
 
 # Move focus container to workspace
 shift + alt - 1 : yabai -m window --space 1
@@ -33,7 +33,7 @@ meh - right : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
 
 # Float and center window
-shift + alt - c : yabai -m window --toggle float;\
+meh - c : yabai -m window --toggle float;\
                 yabai -m window --grid 4:4:1:1:2:2
 
 # Set insertion point for focused container
@@ -43,7 +43,7 @@ shift + alt - c : yabai -m window --toggle float;\
 # shift + ctrl + alt - l : yabai -m window --insert east
 
 # Float / Unfloat window
-shift + alt - space : yabai -m window --toggle float
+meh - space : yabai -m window --toggle float
 
 # Make fullscreen
 meh - f : yabai -m window --toggle zoom-fullscreen
@@ -68,12 +68,17 @@ hyper - r : \
 ctrl - n : yabai -m window --focus stack.next
 ctrl - p : yabai -m window --focus stack.prev
 
+#unstack
+meh - v : window=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window east --stack $window || (yabai -m window $window --toggle float && yabai -m window $window --toggle float)
+
 # Add the active window  to the window or stack to the {direction}
 # Note that this only works when the active window does *not* already belong to a stack
 cmd + ctrl - left  : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
 cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
 cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
 cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
+
+meh - o : yabai -m window --stack next
 
 ctrl - 1 : yabai -m space --focus 1
 ctrl - 2 : yabai -m space --focus 2
