@@ -51,3 +51,4 @@ yabai -m rule --add app="iTerm2" manage=off
 
 ## If I close the active window, focus on any other visible window.
 yabai -m signal --add event=window_destroyed action="bash /Users/antonio.zegarelli/focus.sh"
+yabai -m signal --add event=window_minimized action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
