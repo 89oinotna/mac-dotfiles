@@ -15,8 +15,8 @@ hyper - down : yabai -m window --warp south
 hyper - up : yabai -m window --warp north
 hyper - right : yabai -m window --warp east
 
-meh - n : yabai -m window --display prev; yabai -m display --focus prev
-meh - m : yabai -m window --display next; yabai -m display --focus next
+hyper - n : yabai -m window --display prev; yabai -m display --focus prev
+hyper - m : yabai -m window --display next; yabai -m display --focus next
 # Move focus container to workspace
 shift + alt - 1 : yabai -m window --space 1
 shift + alt - 2 : yabai -m window --space 2
@@ -58,8 +58,8 @@ meh - f : yabai -m window --toggle zoom-fullscreen
 #ctrl + alt - "right" : yabai -m space --move next
 
 # focus monitor
-meh - w  : yabai -m display --focus prev
-meh - s  : yabai -m display --focus next
+meh - n  : yabai -m display --focus prev
+meh - m  : yabai -m display --focus next
 
 #restart
 hyper - r : \
@@ -68,7 +68,7 @@ hyper - r : \
 
 # Focus window up/down in stack
 ctrl - n : yabai -m window --focus stack.next
-ctrl - p : yabai -m window --focus stack.prev
+ctrl - m : yabai -m window --focus stack.prev
 
 # unstack
 meh - v : window=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window east --stack $window || (yabai -m window $window --toggle float && yabai -m window $window --toggle float)
