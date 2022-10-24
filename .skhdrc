@@ -15,6 +15,8 @@ hyper - down : yabai -m window --warp south
 hyper - up : yabai -m window --warp north
 hyper - right : yabai -m window --warp east
 
+meh - n : yabai -m window --display prev; yabai -m display --focus prev
+meh - m : yabai -m window --display next; yabai -m display --focus next
 # Move focus container to workspace
 shift + alt - 1 : yabai -m window --space 1
 shift + alt - 2 : yabai -m window --space 2
@@ -68,7 +70,7 @@ hyper - r : \
 ctrl - n : yabai -m window --focus stack.next
 ctrl - p : yabai -m window --focus stack.prev
 
-#unstack
+# unstack
 meh - v : window=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window east --stack $window || (yabai -m window $window --toggle float && yabai -m window $window --toggle float)
 
 # Add the active window  to the window or stack to the {direction}
