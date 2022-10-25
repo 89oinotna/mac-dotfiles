@@ -81,6 +81,8 @@ cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --
 cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
 
 
+meh - u : yabai -m window --focus west; yabai -m window --stack next
+meh - i : yabai -m window --focus east; yabai -m window --stack prev
 meh - o : yabai -m window --stack prev
 meh - p : yabai -m window --stack next
 
