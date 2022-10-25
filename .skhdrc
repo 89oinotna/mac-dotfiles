@@ -80,10 +80,16 @@ cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --
 cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
 cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
 
-meh - o : yabai -m window --stack next
+
+meh - o : yabai -m window --stack prev
+meh - p : yabai -m window --stack next
 
 ctrl - 1 : yabai -m space --focus 1
 ctrl - 2 : yabai -m space --focus 2
 ctrl - 3 : yabai -m space --focus 3
 ctrl - 4 : yabai -m space --focus 4
 ctrl - 5 : yabai -m space --focus 5
+
+
+# open windows
+# cmd + tab then release tab press option and then release cmd
